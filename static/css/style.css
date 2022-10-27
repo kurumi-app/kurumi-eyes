@@ -49,3 +49,44 @@ a:hover {
     top: 3%;
 }
 
+.sidebar {
+    max-width: 250px;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #16161d;
+
+}
+
+.wrapper h3 {
+    color: #fff;
+    text-align: center;
+}
+
+#username {
+    color: #747bff;
+    filter: drop-shadow(0 0 8px #747bff);
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 222px;
+    height: 100%;
+}
+
+.card {
+    background-color: #16161d;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    color: #fff;
+    text-align: center;
+    max-width: 1000px;
+}

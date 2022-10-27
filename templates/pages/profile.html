@@ -1,0 +1,48 @@
+{% extends 'partials/base.html' %} {% block title %} profile {% endblock title %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    {% include 'partials/sidenav.html' %}
+
+    <div class="profile">
+        <form enctype="multipart/form-data" method="post">  
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                                <img src="{{ user.profile.avatar.url }}" alt="Placeholder image">
+                        </div>
+                        <div class="media-content">
+                            <p>{{user}}</p>
+                            <input type="file" name="avatar" style=" height: auto;">
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <p>Current Bio:</p>
+                        <p >{{ user.profile.bio }}</p>
+                        <p>Edit Bio:</p>
+                        <input class="drac-input drac-input-purple drac-text-purple drac-m-xs" type="text" placeholder="Something Interesting" name="bio">
+                    </div>
+
+                    {% if form.errors %}
+                    {% for field in form   %}
+                    {% for error in field.errors   %}
+                    <p style=" color: red;">{{ error|escape }}</p>
+                    {% endfor %}
+                    {% endfor %}
+                    {% endif %}
+
+                    <button type="submit">Update Profile</button>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

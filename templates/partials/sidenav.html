@@ -1,0 +1,36 @@
+{% block content %}
+
+<div class="sidebar">
+  <div class="wrapper">
+    <h3>welcome, <span id="username">{{ request.user.username }}!</span></h3>
+    <div class="links">
+      <button class="drac-btn drac-bg-purple">
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+      </button>
+      <button class="drac-btn drac-bg-purple">
+        <a href="{% url 'profile' %}">Profile</a>
+      </button>
+
+      <div class="drac-box">
+        <hr class="drac-divider drac-border-purple" />
+      </div>
+
+      <button class="drac-btn drac-bg-purple">
+        <a href="{% url 'home' %}">My Uploads</a>
+      </button>
+      <button class="drac-btn drac-bg-purple">
+        <a href="{% url 'home' %}">My Settings</a>
+      </button>
+
+      <div class="drac-box">
+        <hr class="drac-divider drac-border-purple" />
+      </div>
+
+      <button class="drac-btn drac-bg-purple">
+        <a href="{% url 'logout' %}">Logout</a>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
