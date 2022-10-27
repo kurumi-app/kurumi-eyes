@@ -31,3 +31,21 @@ body {
 a:hover {
     color: #fff;
 }
+
+.login-form {
+    max-width: 400px;
+}
+
+.nodec {
+    text-decoration: none;
+}
+
+.cool:hover {
+    filter: drop-shadow(0 0 8px #747bff);
+}
+
+.main-comp {
+    position: absolute;
+    top: 3%;
+}
+
