@@ -1,0 +1,57 @@
+{% extends 'partials/base.html' %} {% block title %} register {% endblock title %}
+
+
+{% block content %}
+
+{% include 'partials/homebtn.html' %}
+
+<div class="main-wrapper">
+    <div class="login-form">
+        <form method="post">
+        {% csrf_token %}
+
+            <div class="drac-box">
+                <input
+                name="email"
+                    type="email"
+                    placeholder="email"
+                    class="drac-input drac-input-purple drac-text-purple drac-m-xs"
+                    required
+                />
+                                <input
+                name="username"
+                    type="text"
+                    placeholder="username"
+                    class="drac-input drac-input-purple drac-text-purple drac-m-xs"
+                    required
+                />
+                                <input
+                name="password1"
+                    type="password"
+                    placeholder="password"
+                    class="drac-input drac-input-purple drac-text-purple drac-m-xs"
+                    required
+                />
+                <input
+                name="password2"
+                    placeholder="confirm password"
+                    type="password"
+                    class="drac-input drac-input-purple drac-text-purple drac-m-xs"
+                    required
+                />
+                  <button class="drac-btn drac-bg-purple drac-m-sm" type="submit">Register</button>
+
+
+        {% if form.errors %}
+        {% for field in form   %}
+        {% for error in field.errors   %}
+        <p style="color: red;">{{ error|escape }}</p>
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
