@@ -84,9 +84,46 @@ a:hover {
 .card {
     background-color: #16161d;
     border-radius: 8px;
-    padding: 10px;
-    margin: 10px;
+    padding: 15px;
     color: #fff;
     text-align: center;
-    max-width: 1000px;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sidenav-comp {
+    position: absolute;
+    top: 8px;
+    left: 1%;
+}
+
+.profile {
+    width: 600px;
+}
+
+.profile2 {
+    width: 700px;
+}
+
+.content input {
+    width: 550px;
+}
+
+.media-left img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
