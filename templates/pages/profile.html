@@ -3,7 +3,10 @@
 {% block content %}
 
 <div class="dashboard-wrapper">
+
+    <div class="sidenav-comp">
     {% include 'partials/sidenav.html' %}
+    </div>
 
     <div class="profile">
         <form enctype="multipart/form-data" method="post">  
@@ -35,13 +38,16 @@
                     {% endfor %}
                     {% endif %}
 
-                    <button type="submit">Update Profile</button>
+                    <button class="drac-btn drac-bg-purple-cyan drac-m-sm" type="submit">Update Profile</button>
 
                 </div>
             </div>
 
         </form>
     </div>
+
+    {% include 'partials/footer.html' %}
+
 </div>
 
 

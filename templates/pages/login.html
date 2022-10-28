@@ -25,7 +25,18 @@
                     class="drac-input drac-input-purple drac-text-purple drac-m-xs"
                     required
                 />
+
+                        {% if form.errors %}
+                        {% for field in form %}
+                        {% for error in form.non_field_errors %}
+                        <p style="color: red;">{{ error|escape }}</p>
+                        {% endfor %}
+                        {% endfor %}
+                        {% endif %}
+
                   <button class="drac-btn drac-bg-purple drac-m-sm" type="submit">Login</button>
+
+
             </div>
         </form>
     </div>
