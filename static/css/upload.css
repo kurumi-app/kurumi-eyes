@@ -1,0 +1,27 @@
+body {
+    background-color: #21222c;
+}
+
+
+.info-wrapper {
+    display: flex;
+}
+
+.card {
+    background-color: #16161d;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+img {
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+img, span {
+    color: #747bff;
+    filter: drop-shadow(0 0 8px #747bff);
+}

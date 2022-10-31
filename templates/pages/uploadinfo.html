@@ -1,0 +1,35 @@
+{% load static %} {% load sizify %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/dracula-ui.css' %}" />
+    <title>{{ image.slug }} | kurumi eyes</title>
+  </head>
+  <body>
+    <div class="info-wrapper">
+      <div class="card">
+        <div class="img-source">
+          <h2><span>{{ image.slug }}</span></h2>
+          <h3>
+            {{ image.image.name|cut:'uploads/' }} ({{ image.image.size|sizify }})
+          </h3>
+          <img src="{{ image.image.url }}" alt="" />
+        </div>
+
+        <div class="img-details">
+          <h1>Uploaded by: <span>{{ image.user }}</span></h1>
+          <h2>Uploaded on: <span>{{ image.uploaded_at }}</span></h2>
+        </div>
+
+        <button class="drac-btn drac-bg-purple-cyan drac-m-sm" type="submit">
+          download
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

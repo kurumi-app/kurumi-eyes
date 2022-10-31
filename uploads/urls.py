@@ -8,5 +8,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path("", home, name="home"),
     path("dashboard/", dashboard, name="dashboard"),
+    path("upload/", upload, name="upload"),
+    path("upload/<slug:slug>/", upload_info, name="upload_info"),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

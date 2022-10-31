@@ -1,0 +1,47 @@
+{% extends 'partials/base.html' %} {% block title %} upload {% endblock title %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+
+    <div class="sidenav-comp">
+    {% include 'partials/sidenav.html' %}
+    </div>
+
+
+    <div class="profile">
+        <form enctype="multipart/form-data" method="post">  
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+
+                            <input type="file" name="image" style=" height: auto;">
+                        </div>
+                    </div>
+
+                    {% if form.errors %}
+                    {% for field in form   %}
+                    {% for error in field.errors   %}
+                    <p style=" color: red;">{{ error|escape }}</p>
+                    {% endfor %}
+                    {% endfor %}
+                    {% endif %}
+
+                    <button class="drac-btn drac-bg-purple-cyan drac-m-sm" type="submit">Upload Image</button>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+{% include 'partials/footer.html' %}
+
+</div>
+
+
+
+
+{% endblock content %}
