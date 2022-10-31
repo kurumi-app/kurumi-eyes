@@ -1,4 +1,5 @@
 {% extends 'partials/base.html' %} {% block title %} dashboard {% endblock title %} 
+{% load sizify %} 
 
 {% block content %}
 
@@ -10,67 +11,49 @@
       <div class="card-content">
         <h1>Stats</h1>
         <div class="stats">
-          <div
-            variant="subtle"
-            class="drac-box drac-card drac-card-subtle drac-border-purple drac-bg-pink drac-p-md drac-m-md"
-          >
-            <span class="drac-text drac-line-height drac-text-purple"
-              >Total Users</span
-            >
-            <span class="drac-text drac-line-height drac-text-white">{{ users }}</span>
-          </div>
+          <table class="drac-table drac-table-cyan">
+            <thead>
+              <tr>
+                <th class="drac-text drac-text-white">Users Registered</th>
+                <th class="drac-text drac-text-white">Total Uploads</th>
+                <th class="drac-text drac-text-white">Uploads Today</th>
+                <th class="drac-text drac-text-white">Average Daily Upload</th>
+                <th class="drac-text drac-text-white">Used Storage</th>
 
-          <div
-            variant="subtle"
-            class="drac-box drac-card drac-card-subtle drac-border-pink drac-bg-pink drac-p-md drac-m-md"
-          >
-            <span class="drac-text drac-line-height drac-text-pink"
-              >Total Uploads</span
-            >
-            <span class="drac-text drac-line-height drac-text-white"
-              >12534</span
-            >
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="drac-text drac-text-purple" style="text-shadow: 0 0 8px #747bff;">{{ users }}</td>
+                <td class="drac-text drac-text-pink" style="text-shadow: 0 0 8px #FFC0CB;">{{ uploads }}</td>
+                <td class="drac-text drac-text-green" style="text-shadow: 0 0 8px #00FF00;">{{ uploads_today }}</td>
+                <td class="drac-text drac-text-cyan" style="text-shadow: 0 0 8px #00FFFF;">{{ average_daily_uploads|floatformat:2 }}</td>
+                <td class="drac-text drac-text-orange" style="text-shadow: 0 0 8px #FFA500;">{{ storage_used|sizify }}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+      </div>
 
-          <div
-            variant="subtle"
-            class="drac-box drac-card drac-card-subtle drac-border-cyan drac-bg-pink drac-p-md drac-m-md"
-          >
-            <span class="drac-text drac-line-height drac-text-cyan"
-              >Storage Used</span
-            >
-            <span class="drac-text drac-line-height drac-text-white"
-              >12534
-            </span>
-          </div>
+          <div class="stats">
+          <table class="drac-table drac-table-cyan">
+            <thead>
+              <tr>
+                <th class="drac-text drac-text-white">Last Created User at:</th>
+                <th class="drac-text drac-text-white">Last Upload at:</th>
+                <th class="drac-text drac-text-white">Last Upload Size:</th>
 
-        </div>
-
-        <div class="stats">
-                                <div
-            variant="subtle"
-            class="drac-box drac-card drac-card-subtle drac-border-pink drac-bg-green drac-p-md drac-m-md"
-          >
-            <span class="drac-text drac-line-height drac-text-green"
-              >Uploads Today</span
-            >
-            <span class="drac-text drac-line-height drac-text-white"
-              >12534</span
-            >
-          </div>
-
-                              <div
-            variant="subtle"
-            class="drac-box drac-card drac-card-subtle drac-border-orange drac-bg-pink drac-p-md drac-m-md"
-          >
-            <span class="drac-text drac-line-height drac-text-orange"
-              >Average Daily Upload</span
-            >
-            <span class="drac-text drac-line-height drac-text-white"
-              >12534</span
-            >
-          </div>
-        </div>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="drac-text drac-text-purple" style="text-shadow: 0 0 8px #747bff;">{{ last_created_user_time }}</td>
+                <td class="drac-text drac-text-pink" style="text-shadow: 0 0 8px #FFC0CB;">{{ last_upload_time }}</td>
+                <td class="drac-text drac-text-green" style="text-shadow: 0 0 8px #00FF00;">{{ last_image_size|sizify }}</td>
+              </tr>
+            </tbody>
+          </table>
+          
       </div>
     </div>
 

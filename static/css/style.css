@@ -126,4 +126,43 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    margin-top: 20px;
+}
+
+.uploads-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.upload-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.upload-card a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+}
+
+.upload-card a:hover {
+    cursor: pointer;
+    text-shadow: 0 0 8px #747bff;
+}
+
+table,
+thead,
+th,
+tr,
+td {
+    text-align: center !important;
 }
