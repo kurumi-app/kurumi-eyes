@@ -10,5 +10,7 @@ urlpatterns = [
     path("dashboard/", dashboard, name="dashboard"),
     path("upload/", upload, name="upload"),
     path("upload/<slug:slug>/", upload_info, name="upload_info"),
+    path("download/<slug:slug>/", download_image, name="download"),
+    path("myuploads/", my_uploads, name="my_uploads"),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

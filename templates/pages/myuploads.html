@@ -1,0 +1,37 @@
+{% extends 'partials/base.html' %} {% block title %} my uploads {% endblock title %} 
+{% load sizify %} 
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+
+    <div class="sidenav-comp">
+    {% include 'partials/sidenav.html' %}
+    </div>
+
+    
+
+  <div class="uploads-container">
+
+    {% for up in uploads %}
+    <div class="upload-card">
+    <a href="{% url 'upload_info' up.slug %}" target="_blank"><span class="drac-text-purple"
+      >{{ up.slug }}</span
+    >
+    <span class="drac-text-pink"
+      >{{ up.image.name|cut:'uploads/' }}</span
+    >
+    <span class="drac-text drac-line-height drac-text-white"
+      >{{ up.image.size|sizify }}</span
+    >
+    <img src="{{ up.image.url }}" alt="" srcset="" style="width: 250px" />
+    </a>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  {% include 'partials/footer.html' %} 
+  
+</div>
+{% endblock content %}

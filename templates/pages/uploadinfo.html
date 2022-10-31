@@ -11,14 +11,18 @@
     <title>{{ image.slug }} | kurumi eyes</title>
   </head>
   <body>
+
+
     <div class="info-wrapper">
+
+
       <div class="card">
         <div class="img-source">
           <h2><span>{{ image.slug }}</span></h2>
           <h3>
             {{ image.image.name|cut:'uploads/' }} ({{ image.image.size|sizify }})
           </h3>
-          <img src="{{ image.image.url }}" alt="" />
+          <a href="{{ image.image.url }}"><img src="{{ image.image.url }}" alt="" /></a>
         </div>
 
         <div class="img-details">
@@ -26,9 +30,9 @@
           <h2>Uploaded on: <span>{{ image.uploaded_at }}</span></h2>
         </div>
 
-        <button class="drac-btn drac-bg-purple-cyan drac-m-sm" type="submit">
+        <a href="{% url 'download' image.slug %}"><button class="drac-btn drac-bg-purple-cyan drac-m-sm" type="submit">
           download
-        </button>
+        </button></a>
       </div>
     </div>
   </body>
