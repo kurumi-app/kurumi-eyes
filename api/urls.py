@@ -3,9 +3,12 @@ from .views import *
 
 from django.contrib.auth import views as auth_views
 
+from rest_framework.authtoken import views
+
+
 
 urlpatterns = [
-    path("login/", auth_views.LoginView.as_view(template_name="pages/login.html"), name="login"),
-    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path("upload/", UploadView.as_view(), name="uploadapi"),
+    path('api-token-auth/', views.obtain_auth_token)
 
 ]
