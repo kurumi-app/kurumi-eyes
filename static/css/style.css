@@ -130,11 +130,11 @@ a:hover {
 }
 
 .uploads-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: 1rem;
+    margin-left: 200px;
 }
 
 .upload-card {
@@ -157,6 +157,11 @@ a:hover {
 .upload-card a:hover {
     cursor: pointer;
     text-shadow: 0 0 8px #747bff;
+}
+
+#uploadimg:hover {
+    cursor: pointer;
+    box-shadow: 0 0 8px #747bff;
 }
 
 table,
