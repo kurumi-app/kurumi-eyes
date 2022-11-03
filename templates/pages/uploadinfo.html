@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="{% static 'css/upload.css' %}" />
     <link rel="stylesheet" href="{% static 'css/dracula-ui.css' %}" />
     <title>{{ image.slug }} | kurumi eyes</title>
+    <link rel="shortcut icon" href="{% static 'imgs/favicon.ico' %}" type="image/x-icon">
+    <meta name="twitter:card" content="summary_large_image"> 
+    <meta name="twitter:image" content="{{ image.image.url }}"> 
+    <meta name="twitter:image:src" content="{{ image.image.url }}">
+    <meta property="og:image" content="{{ image.image.url }}">
+    <meta name="theme-color" content="#FF6EC4"> 
+    <meta property="og:title" content="{{ image.uploaded_at }} "> 
+    <meta name="twitter:title" content="{{ image.uploaded_at }} ">
+    <meta property="og:site_name" content="{{ image.image.size|sizify }} image"> 
+    <meta name="twitter:site" content="{{ image.image.size|sizify }} image">
   </head>
   <body>
 
@@ -37,3 +47,4 @@
     </div>
   </body>
 </html>
+
