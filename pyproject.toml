@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "kurumi-eyes"
-version = "1.0"
+version = "0.1.0"
 description = "image hosting service"
 authors = ["clmb <ccolombomatheus@gmail.com>"]
 readme = "README.md"
