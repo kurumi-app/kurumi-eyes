@@ -24,11 +24,32 @@
             </thead>
             <tbody>
               <tr>
+                {% if users < 1 %}
+                <td class="drac-text drac-text-purple" style="text-shadow: 0 0 8px #747bff;">0</td>
+                {% else %}
                 <td class="drac-text drac-text-purple" style="text-shadow: 0 0 8px #747bff;">{{ users }}</td>
+                {% endif %}
+                {% if uploads < 1 %}
+                <td class="drac-text drac-text-pink" style="text-shadow: 0 0 8px #FFC0CB;">0</td>
+                {% else %}
                 <td class="drac-text drac-text-pink" style="text-shadow: 0 0 8px #FFC0CB;">{{ uploads }}</td>
+                {% endif %}
+                {% if uploads_today < 1 %}
+                <td class="drac-text drac-text-green" style="text-shadow: 0 0 8px #00FF00;">0</td>
+                {% else %}
                 <td class="drac-text drac-text-green" style="text-shadow: 0 0 8px #00FF00;">{{ uploads_today }}</td>
+                {% endif %}
+                {% if average_daily < 1 %}
+                <td class="drac-text drac-text-cyan" style="text-shadow: 0 0 8px #00FFFF;">0</td>
+                {% else %}
                 <td class="drac-text drac-text-cyan" style="text-shadow: 0 0 8px #00FFFF;">{{ average_daily_uploads|floatformat:2 }}</td>
+                {% endif %}
+                {% if used_storage < 1 %}
+                <td class="drac-text drac-text-orange" style="text-shadow: 0 0 8px #FFA500;">0</td>
+                {% else %}
                 <td class="drac-text drac-text-orange" style="text-shadow: 0 0 8px #FFA500;">{{ storage_used|sizify }}</td>
+                {% endif %}
+
               </tr>
             </tbody>
           </table>
