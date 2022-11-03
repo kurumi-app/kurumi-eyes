@@ -200,16 +200,11 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler',
         },
         # critical errors are logged to sentry
-        'sentry': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'raven.contrib.django.handlers.SentryHandler',
-        },
     },
     'loggers': {
         # This is the "catch all" logger
         '': {
-            'handlers': ['console', 'syslog', 'mail_admins', 'sentry'],
+            'handlers': ['console', 'syslog', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': False,
         },
