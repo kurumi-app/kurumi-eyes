@@ -2,7 +2,7 @@
 name = "asgiref"
 version = "3.5.2"
 description = "ASGI specs, helper code, and adapters"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -13,7 +13,7 @@ tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 name = "certifi"
 version = "2022.9.24"
 description = "Python package for providing Mozilla's CA Bundle."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -21,7 +21,7 @@ python-versions = ">=3.6"
 name = "charset-normalizer"
 version = "2.1.1"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.0"
 
@@ -32,7 +32,7 @@ unicode-backport = ["unicodedata2"]
 name = "dj-database-url"
 version = "1.0.0"
 description = "Use Database URLs in your Django Application."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -43,7 +43,7 @@ Django = ">3.2"
 name = "django"
 version = "4.1.2"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 
@@ -60,7 +60,7 @@ bcrypt = ["bcrypt"]
 name = "django-cors-headers"
 version = "3.13.0"
 description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -71,7 +71,7 @@ Django = ">=3.2"
 name = "djangorestframework"
 version = "3.14.0"
 description = "Web APIs for Django, made easy."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -100,7 +100,7 @@ tornado = ["tornado (>=0.2)"]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -108,7 +108,7 @@ python-versions = ">=3.5"
 name = "pillow"
 version = "9.2.0"
 description = "Python Imaging Library (Fork)"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -120,7 +120,7 @@ tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "pa
 name = "psycopg2-binary"
 version = "2.9.5"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -128,7 +128,7 @@ python-versions = ">=3.6"
 name = "pytz"
 version = "2022.6"
 description = "World timezone definitions, modern and historical"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -136,7 +136,7 @@ python-versions = "*"
 name = "requests"
 version = "2.28.1"
 description = "Python HTTP for Humans."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7, <4"
 
@@ -167,7 +167,7 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 name = "sqlparse"
 version = "0.4.3"
 description = "A non-validating SQL parser."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -175,7 +175,7 @@ python-versions = ">=3.5"
 name = "tzdata"
 version = "2022.5"
 description = "Provider of IANA time zone data"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2"
 
@@ -183,7 +183,7 @@ python-versions = ">=2"
 name = "urllib3"
 version = "1.26.12"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4"
 
@@ -195,7 +195,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "704fb59187fa872f7807cf19a85d9647a1dd504be1d10f82a6f8e844e805f950"
+content-hash = "5b326d3320f58dc1b13987d93e689a21afd2b28b43cf4cca3386dfab32f770f9"
 
 [metadata.files]
 asgiref = [
