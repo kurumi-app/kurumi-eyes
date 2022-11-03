@@ -1,8 +1,9 @@
 set -o errexit
 
-pip install --upgrade pippip install --force-reinstall -U setuptools
 
 poetry install
+pip install --upgrade pip
+pip install --force-reinstall -U setuptools
 
 python manage.py collectstatic --noinput
 python manage.py migrate 
