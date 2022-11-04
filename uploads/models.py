@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 import string
 from datetime import timedelta, timezone
 import random
-
+import os 
 # Create your models here.
 
 def randomizer():
@@ -29,3 +29,5 @@ class ImageUpload(models.Model):
     def delete_24h(self):
         if self.uploaded_at < timezone.now() - timedelta(hours=24):
             self.delete()
+            os.remove(self.image.path)
+            
