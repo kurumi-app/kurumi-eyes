@@ -14,6 +14,10 @@ from logging.handlers import SysLogHandler
 from pathlib import Path
 import dj_database_url
 import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-mp8mn0km&dknq95^6f16p58ve!u3b+gg8)wkud5_#p@pjt#$si')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['142.93.129.15']
+ALLOWED_HOSTS = ['174.138.7.51']
 
 
 # Application definition
@@ -96,9 +100,9 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kurumieyes',
-        'USER': 'user',
-        'PASSWORD': 'password',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASS'),
         'HOST': 'localhost',
         'PORT': '',
     }
