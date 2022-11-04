@@ -1,4 +1,4 @@
-<center>
+<div align="center">
     <h1>Kurumi-Eyes</h1>
     <h2>An image hosting service built with Django and Django REST. Styles made with Dracula-UI.</h2>
     <br>
@@ -17,4 +17,4 @@
     <h2>Auto generated META for social platforms (Discord, Twitter, Slack & Etc)</h2>
     <img src="./markdown/ssmeta.png" alt="index" width="800px" />
 
-</center>
+</div>
