@@ -13,15 +13,19 @@ def test(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CreateUserForm(request.POST)
 
         if form.is_valid():
+            invite = form.cleaned_data.get("invite")
+            invite = Invites.objects.get(invite=invite)
             user = form.save()
             login(request, user)
             UserProfile.objects.get_or_create(user=request.user)
-            return redirect('home')
+            invite.delete()
+            return redirect("profile")
+
     else:
-        form = UserCreationForm()
+        form = CreateUserForm()
 
     return render(request, 'pages/register.html', {'form': form})
 
