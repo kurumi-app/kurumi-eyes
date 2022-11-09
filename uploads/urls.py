@@ -6,6 +6,9 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    path("kurumiadminsysuploads/", admin_uploads, name="admin_uploads"),
+    path("delupload/<int:pk>/", adm_delete_upload, name="del_upload"),
+
     path("", home, name="home"),
     path("dashboard/", dashboard, name="dashboard"),
     path("upload/", upload, name="upload"),

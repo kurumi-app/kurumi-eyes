@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, FileResponse
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
+
 from django.contrib.auth import get_user_model
 from django.db.models import Sum
 from rest_framework.authtoken.models import Token
@@ -104,3 +106,18 @@ def sharex_conf(request):
 
 
     
+# Admin Misc
+
+def admin_uploads(request):
+    uploads = ImageUpload.objects.all()
+
+    context = {
+        'uploads': uploads,
+    }
+    return render(request, 'pages/alluploads.html', context)
+
+@staff_member_required
+def adm_delete_upload(request, pk):
+    upload = ImageUpload.objects.get(pk=pk)
+    upload.delete()
+    return redirect('admin_uploads')
