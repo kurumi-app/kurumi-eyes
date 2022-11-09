@@ -171,3 +171,16 @@ tr,
 td {
     text-align: center !important;
 }
+
+.profile-margin {
+    margin-top: 50px;
+}
+
+.profile-margin button {
+    width: 100px;
+}
+
+.profile-margin a {
+    color: #fff;
+    text-decoration: none;
+}

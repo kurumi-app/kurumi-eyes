@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %} {% block title %} upload {% endblock title %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+
+    <div class="sidenav-comp">
+    {% include 'partials/sidenav.html' %}
+    </div>
+
+
+    <div class="profile-margin">
+        <button class="drac-btn drac-bg-purple">
+            <a href="{% url 'sharex_conf' %}">ShareX</a>
+        </button>
+
+    </div>
+
+{% include 'partials/footer.html' %}
+
+</div>
+
+
+
+
+{% endblock content %}

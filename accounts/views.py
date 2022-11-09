@@ -3,6 +3,9 @@ from django.contrib.auth import login
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
+# import auth token
+from rest_framework.authtoken.models import Token
+
 from .forms import * 
 # Create your views here.
 
@@ -21,6 +24,7 @@ def register(request):
             user = form.save()
             login(request, user)
             UserProfile.objects.get_or_create(user=request.user)
+            token = Token.objects.get_or_create(user=request.user)
             invite.delete()
             return redirect("profile")
 
@@ -40,4 +44,3 @@ def editprofile(request):
     else:
         form = UserProfileForm(instance=request.user)
     return render(request, "pages/profile.html", {"form": form})
-
