@@ -21,6 +21,7 @@
     <img id="uploadimg" src="{{ up.image.url }}" alt="" srcset="" style="width: 250px" />
     </a>
     <a href="{% url 'del_upload' up.pk %}" style="color: red; font-weight: bold;">delete</a>
+    <a href="{% url 'del_user' up.user.pk %}" style="color: red; font-weight: bold;">BAN USER</a>
     </div>
     {% endfor %}
 

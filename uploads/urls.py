@@ -8,6 +8,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path("kurumiadminsysuploads/", admin_uploads, name="admin_uploads"),
     path("delupload/<int:pk>/", adm_delete_upload, name="del_upload"),
+    path("deluser/<int:pk>/", adm_ban_user, name="del_user"),
 
     path("", home, name="home"),
     path("dashboard/", dashboard, name="dashboard"),

@@ -121,3 +121,9 @@ def adm_delete_upload(request, pk):
     upload = ImageUpload.objects.get(pk=pk)
     upload.delete()
     return redirect('admin_uploads')
+
+@staff_member_required
+def adm_ban_user(request, pk):
+    user = get_user_model().objects.get(pk=pk)
+    user.delete()
+    return redirect('admin_uploads')
