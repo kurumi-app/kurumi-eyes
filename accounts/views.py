@@ -36,6 +36,7 @@ def register(request):
 @login_required(login_url=login_url)
 def editprofile(request):
     UserProfile.objects.get_or_create(user=request.user)
+    user_token = Token.objects.get(user=request.user)
     if request.method == "POST":
         form = UserProfileForm(request.POST, request.FILES , instance=request.user.profile)
         if form.is_valid():
@@ -43,4 +44,4 @@ def editprofile(request):
             return redirect("profile")
     else:
         form = UserProfileForm(instance=request.user)
-    return render(request, "pages/profile.html", {"form": form})
+    return render(request, "pages/profile.html", {"form": form, "token": user_token})

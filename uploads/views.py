@@ -29,6 +29,7 @@ def dashboard(request):
         'last_upload_time': ImageUpload.objects.last().uploaded_at,
         'last_image_size': ImageUpload.objects.last().image_size,
     }
+    
     return render(request, 'pages/dashboard.html', context)
 
 

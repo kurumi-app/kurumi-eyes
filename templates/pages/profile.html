@@ -3,12 +3,11 @@
 {% block content %}
 
 <div class="dashboard-wrapper">
-
     <div class="sidenav-comp">
     {% include 'partials/sidenav.html' %}
     </div>
 
-    <div class="profile">
+    <div class="profile" id="dragArea">
         <form enctype="multipart/form-data" method="post">  
             {% csrf_token %}
             <div class="card">
@@ -28,6 +27,7 @@
                         <p >{{ user.profile.bio }}</p>
                         <p>Edit Bio:</p>
                         <input class="drac-input drac-input-purple drac-text-purple drac-m-xs" type="text" placeholder="Something Interesting" name="bio">
+                        
                     </div>
 
                     {% if form.errors %}
@@ -38,17 +38,21 @@
                     {% endfor %}
                     {% endif %}
 
+                    <button class="drac-btn drac-bg-purple-cyan drac-m-sm" onclick="copyToken()" type="button">Copy Token</button>
                     <button class="drac-btn drac-bg-purple-cyan drac-m-sm" type="submit">Update Profile</button>
 
                 </div>
             </div>
 
         </form>
+    <input type="hidden" id="token" name="usertoken" value="{{ token }}" readonly>
+
     </div>
 
     {% include 'partials/footer.html' %}
 
 </div>
+
 
 
 {% endblock content %}
